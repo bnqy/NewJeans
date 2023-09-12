@@ -26,3 +26,11 @@ string firstName = fullName.Substring(startIndex: 0, length: indexOfSpace);
 string lastName = fullName.Substring(startIndex: indexOfSpace + 1);
 WriteLine($"Full Name: {fullName}");
 WriteLine($"First Name: {firstName} - Last Name: {lastName}");
+WriteLine();
+
+//StartsWith EndWith Contains
+
+string name = "Jaeden";
+bool b1 = name.Contains("A");
+bool b2 = name.StartsWith("J");
+WriteLine($"{name} contains A ({b1}) and starts with J ({b2})");
