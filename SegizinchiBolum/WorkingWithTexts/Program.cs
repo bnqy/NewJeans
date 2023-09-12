@@ -2,7 +2,7 @@
 using static System.Console;
 
 string s1 = "Bishkek";
-string s2 = "R, o, Pe, EE, oo,wa, mE";
+string s2 = "R,o,Pe,EE,oo,wa,mE";
 string[] s3 = s2.Split(",");
 WriteLine($"The word {s1} has {s1.Length} chars");
 
@@ -32,5 +32,12 @@ WriteLine();
 
 string name = "Jaeden";
 bool b1 = name.Contains("A");
-bool b2 = name.StartsWith("J");
+bool b2 = name.StartsWith("Ja");
 WriteLine($"{name} contains A ({b1}) and starts with J ({b2})");
+WriteLine();
+
+// join
+
+string joined = string.Join(" -> ", s3);
+WriteLine(joined);
+
