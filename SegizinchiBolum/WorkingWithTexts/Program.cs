@@ -15,3 +15,14 @@ foreach (var s in s3)
 {
     WriteLine(s);
 }
+
+WriteLine();
+
+// IndexOf and Sunstring
+
+string fullName = "Dua Lipa";
+int indexOfSpace = fullName.IndexOf(' ');
+string firstName = fullName.Substring(startIndex: 0, length: indexOfSpace);
+string lastName = fullName.Substring(startIndex: indexOfSpace + 1);
+WriteLine($"Full Name: {fullName}");
+WriteLine($"First Name: {firstName} - Last Name: {lastName}");
