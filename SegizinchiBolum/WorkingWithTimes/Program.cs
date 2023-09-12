@@ -37,3 +37,14 @@ for (int year = 2020; year < 2026; year++)
     Write($"{year} is a leap year? -> {DateTime.IsLeapYear(year)} ");
     WriteLine($"February days: {DateTime.DaysInMonth(year, 2)}");
 }
+WriteLine();
+
+// DateOnly and TimeOnly
+
+DateOnly duaBDay = new DateOnly(year: 2024, month: 7, day: 22);
+WriteLine($"Dua's next bday is {duaBDay}");
+TimeOnly party = new(hour: 19, minute: 45);
+WriteLine($"Dua's bday party starts at {party}");
+
+DateTime saveCalendar = duaBDay.ToDateTime(party);
+WriteLine($"Add to your calendar {saveCalendar}");
