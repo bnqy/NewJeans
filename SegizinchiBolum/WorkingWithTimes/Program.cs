@@ -1,4 +1,5 @@
 ﻿using static System.Console;
+using System.Globalization;
 
 WriteLine($"Earliest date.time value - {DateTime.MinValue}");
 WriteLine($"Unix Epoch date.time value - {DateTime.UnixEpoch}");
@@ -27,3 +28,12 @@ TimeSpan untillNewYear = newYear - DateTime.Now;
 WriteLine($"There are {untillNewYear.Days} days and {untillNewYear.Hours} hours left");
 WriteLine($"There total hours untill New Year: {untillNewYear.TotalHours:N0}");
 WriteLine($"{DateTime.Now.ToShortTimeString()} - {DateTime.Now.ToShortDateString()}");
+WriteLine();
+
+// Culture Info
+WriteLine($"Current culture is \"{CultureInfo.CurrentCulture.Name}\"");
+for (int year = 2020; year < 2026; year++)
+{
+    Write($"{year} is a leap year? -> {DateTime.IsLeapYear(year)} ");
+    WriteLine($"February days: {DateTime.DaysInMonth(year, 2)}");
+}
