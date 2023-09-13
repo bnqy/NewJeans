@@ -1,7 +1,8 @@
 ﻿using static System.Console;
 
-WorkingWithLists();
-static void Output(string title, List<string> collection)
+//WorkingWithLists();
+WorkingWithQueue();
+static void Output(string title, IEnumerable<string> collection)
 {
     WriteLine(title);
     foreach (string item in collection)
@@ -33,4 +34,26 @@ static void WorkingWithLists()
     cities.RemoveAt(1);
     cities.Remove("Milan");
     Output("After removing two cities", cities);
+}
+
+
+static void WorkingWithQueue()
+{
+    Queue<string> queue = new();
+    queue.Enqueue("Dua Lipa");
+    queue.Enqueue("Sia");
+    queue.Enqueue("Bebe");
+    queue.Enqueue("The Neighborhood");
+    queue.Enqueue("Adele");
+
+    Output("People in line: ", queue);
+
+    string passed = queue.Dequeue();
+    WriteLine($"Served: {passed}");
+
+    passed = queue.Dequeue();
+    WriteLine($"Served: {passed}");
+    Output("People in line: ", queue);
+
+    WriteLine($"{queue.Peek()} is next in line");
 }

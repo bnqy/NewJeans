@@ -11,7 +11,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WorkingWithTimes", "Working
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WorkingWithRegex", "WorkingWithRegex\WorkingWithRegex.csproj", "{1F61C6C9-9A58-4CFC-B235-9292F50C9B19}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WorkingWithCollections", "WorkingWithCollections\WorkingWithCollections.csproj", "{997AD00E-0F66-4D65-80ED-9FFD98AFC071}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WorkingWithCollections", "WorkingWithCollections\WorkingWithCollections.csproj", "{997AD00E-0F66-4D65-80ED-9FFD98AFC071}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WorkingWithDictionaries", "WorkingWithDictionaries\WorkingWithDictionaries.csproj", "{6DD7C3A9-67A9-4285-A84B-D112D5FB4C1D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -39,6 +41,10 @@ Global
 		{997AD00E-0F66-4D65-80ED-9FFD98AFC071}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{997AD00E-0F66-4D65-80ED-9FFD98AFC071}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{997AD00E-0F66-4D65-80ED-9FFD98AFC071}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6DD7C3A9-67A9-4285-A84B-D112D5FB4C1D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6DD7C3A9-67A9-4285-A84B-D112D5FB4C1D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6DD7C3A9-67A9-4285-A84B-D112D5FB4C1D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6DD7C3A9-67A9-4285-A84B-D112D5FB4C1D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
