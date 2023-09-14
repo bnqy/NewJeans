@@ -1,7 +1,8 @@
 ﻿using static System.Console;
+using System.Collections.Immutable;
 
-//WorkingWithLists();
-WorkingWithQueue();
+WorkingWithLists();
+//WorkingWithQueue();
 static void Output(string title, IEnumerable<string> collection)
 {
     WriteLine(title);
@@ -34,6 +35,12 @@ static void WorkingWithLists()
     cities.RemoveAt(1);
     cities.Remove("Milan");
     Output("After removing two cities", cities);
+
+    ImmutableList<string> immutableCities = cities.ToImmutableList();
+    ImmutableList<string> newList = immutableCities.Add("Bishkek");
+
+    Output("immutableCities: ", immutableCities);
+    Output("newImmutableList: ", newList);
 }
 
 
