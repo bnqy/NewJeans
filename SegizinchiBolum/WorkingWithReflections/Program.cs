@@ -17,3 +17,10 @@ foreach (Attribute attribute in attributes)
 {
     WriteLine($" {attribute.GetType()}");
 }
+WriteLine();
+
+AssemblyInformationalVersionAttribute? version = assembly.GetCustomAttribute<AssemblyInformationalVersionAttribute>();
+WriteLine($"Version: {version?.InformationalVersion}");
+
+AssemblyCompanyAttribute? company = assembly.GetCustomAttribute<AssemblyCompanyAttribute>();
+WriteLine($"Company: {company?.Company}");
