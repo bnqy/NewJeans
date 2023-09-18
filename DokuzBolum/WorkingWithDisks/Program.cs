@@ -90,4 +90,13 @@ static void WorkWithFiles()
     StreamReader textReader = File.OpenText(backUpFile);
     WriteLine(textReader.ReadToEnd());
     textReader.Close();
+
+    WriteLine($"Folder Name: {GetDirectoryName(txtFile)}");
+    WriteLine($"File Name: {GetFileName(txtFile)}");
+    WriteLine("File Name without Extension: {0}",
+     GetFileNameWithoutExtension(txtFile));
+    WriteLine($"File Extension: {GetExtension(txtFile)}");
+    WriteLine($"Random File Name: {GetRandomFileName()}");
+    WriteLine($"Temporary File Name: {GetTempFileName()}");
+
 }
