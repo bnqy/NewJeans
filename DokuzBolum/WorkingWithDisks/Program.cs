@@ -5,7 +5,8 @@ using static System.Environment;
 
 
 //WorkWithDrives();
-WorkWithDirectories();
+//WorkWithDirectories();
+WorkWithFiles();
 static void WorkWithDrives()
 {
     WriteLine($"{"NAME", -30} | {"TYPE", -10} | {"FORMAT", -7} | {"SIZE (BYTES)", 18} | {"FREE SPACE", 18}");
@@ -54,3 +55,39 @@ static void WorkWithDirectories()
     WriteLine($"Does it exist? {Exists(newFolder)}");
 }
 
+
+/*
+ * 
+ * 
+ * 
+ */
+
+static void WorkWithFiles()
+{
+    string dir = Combine(GetFolderPath(SpecialFolder.Personal), "AAA", "NewFiles");
+    CreateDirectory(dir);
+
+    string txtFile = Combine(dir, "newfile1.txt");
+    string backUpFile = Combine(dir, "newfile.bak");
+
+    WriteLine($"Working with {txtFile}");
+
+    WriteLine($"Does it exist? {File.Exists(txtFile)}");
+    StreamWriter textWriter = File.CreateText(txtFile);
+    textWriter.WriteLine("Hello, I will win! C# Just Watch!");
+    textWriter.Close();
+
+    File.Copy(sourceFileName: txtFile, 
+        destFileName: backUpFile,
+        overwrite: true
+        );
+
+    WriteLine($"Make sure file is created and press Enter to delete file");
+    ReadLine();
+
+    File.Delete(txtFile);
+
+    StreamReader textReader = File.OpenText(backUpFile);
+    WriteLine(textReader.ReadToEnd());
+    textReader.Close();
+}
