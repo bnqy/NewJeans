@@ -99,4 +99,10 @@ static void WorkWithFiles()
     WriteLine($"Random File Name: {GetRandomFileName()}");
     WriteLine($"Temporary File Name: {GetTempFileName()}");
 
+
+    FileInfo fileInfo = new(backUpFile);
+    WriteLine($"{backUpFile}");
+    WriteLine($"{fileInfo.Length} bytes");
+    WriteLine($"Last access time: {fileInfo.LastAccessTime}");
+
 }

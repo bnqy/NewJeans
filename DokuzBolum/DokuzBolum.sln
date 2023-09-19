@@ -5,7 +5,9 @@ VisualStudioVersion = 17.5.33424.131
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WorkingWithFileSystemIO", "WorkingWithFileSystemIO\WorkingWithFileSystemIO.csproj", "{38FC4D86-F430-4023-9EFB-86D1607BA170}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WorkingWithDisks", "WorkingWithDisks\WorkingWithDisks.csproj", "{3E663F93-5461-4150-99C5-DA1267360B4B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WorkingWithDisks", "WorkingWithDisks\WorkingWithDisks.csproj", "{3E663F93-5461-4150-99C5-DA1267360B4B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WorkingWithStreams", "WorkingWithStreams\WorkingWithStreams.csproj", "{0D95B786-71AE-42C3-9377-CD84D3266404}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +23,10 @@ Global
 		{3E663F93-5461-4150-99C5-DA1267360B4B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3E663F93-5461-4150-99C5-DA1267360B4B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3E663F93-5461-4150-99C5-DA1267360B4B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0D95B786-71AE-42C3-9377-CD84D3266404}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0D95B786-71AE-42C3-9377-CD84D3266404}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0D95B786-71AE-42C3-9377-CD84D3266404}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0D95B786-71AE-42C3-9377-CD84D3266404}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
