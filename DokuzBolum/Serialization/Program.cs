@@ -67,3 +67,18 @@ using (FileStream fileLoad = File.Open(path, FileMode.Open))
         }
     }
 }
+
+
+string jsonPath = Combine(CurrentDirectory, "people.json");
+
+using (StreamWriter jsonStream = File.CreateText(jsonPath))
+{
+    Newtonsoft.Json.JsonSerializer jss = new();
+
+    jss.Serialize(jsonStream, people);
+}
+WriteLine();
+WriteLine("Written {0:N0} bytes of JSON to: {1}",
+ arg0: new FileInfo(jsonPath).Length,
+ arg1: jsonPath);
+WriteLine(File.ReadAllText(jsonPath));
