@@ -3,6 +3,7 @@ using static System.Environment;
 using static System.IO.Path;
 using System.Xml.Serialization;
 using Serialization;
+using NewJson = System.Text.Json.JsonSerializer;
 
 
 List<Person> people = new()
@@ -82,3 +83,16 @@ WriteLine("Written {0:N0} bytes of JSON to: {1}",
  arg0: new FileInfo(jsonPath).Length,
  arg1: jsonPath);
 WriteLine(File.ReadAllText(jsonPath));
+
+using (FileStream jsonLoad = File.Open(jsonPath, FileMode.Open))
+{
+    List<Person>? loadedPeople = await NewJson.DeserializeAsync(utf8Json: jsonLoad, returnType: typeof(List<Person>)) as List<Person>;
+
+    if (loadedPeople is not null)
+    {
+        foreach (Person p in loadedPeople)
+        {
+            WriteLine("{0} has {1} children.", p.LastName, p.Children?.Count ?? 0);
+        }
+    }
+}
