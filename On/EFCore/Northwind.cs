@@ -4,6 +4,9 @@ namespace EFCore;
 
 public class Northwind : DbContext
 {
+    public DbSet<Category>? Categories { get; set; }
+    public DbSet<Product>? Products { get; set; }
+
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
     {
         if (ProjectConstants.DatabaseProvider == "SQLite")
@@ -19,5 +22,19 @@ public class Northwind : DbContext
             optionsBuilder.UseSqlServer(connection);
         }
     }
- 
+
+    protected override void OnModelCreating(ModelBuilder modelBuilder)
+    { 
+        modelBuilder.Entity<Category>()
+        .Property(category => category.CategoryName)
+        .IsRequired()
+        .HasMaxLength(15);
+        if (ProjectConstants.DatabaseProvider == "SQLite")
+        {
+            modelBuilder.Entity<Product>()
+            .Property(product => product.Cost)
+            .HasConversion<double>();
+        }
+    }
+
 }
