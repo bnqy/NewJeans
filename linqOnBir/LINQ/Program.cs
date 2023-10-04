@@ -1,4 +1,5 @@
-﻿using static System.Console;
+﻿//using System.Linq;
+using static System.Console;
 
 
 // IEnumerable<T> realises
@@ -17,3 +18,6 @@ foreach (string n in query1)
     WriteLine(n);
     names[2] = "Dua";
 }
+
+
+//var q = names.Where(new Func<string, bool>());
