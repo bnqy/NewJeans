@@ -42,7 +42,7 @@ var q = names.Where(name => name.Length > 4);
 
 var q1 = names
          .Where(name => name.Length > 4)
-         .OrderBy(name => name.Length);
+         .OrderByDescending(name => name.Length);
 
 foreach (string n in q1)
 {
