@@ -42,9 +42,18 @@ var q = names.Where(name => name.Length > 4);
 
 var q1 = names
          .Where(name => name.Length > 4)
-         .OrderByDescending(name => name.Length);
+         .OrderBy(name => name.Length);
 
-foreach (string n in q1)
+/*foreach (string n in q1)
+{
+    WriteLine(n);
+}*/
+
+var q2 = names.Where(name => name.Length > 4)
+          .OrderBy(name => name.Length)
+          .ThenBy(name => name);
+
+foreach (string n in q2)
 {
     WriteLine(n);
 }
