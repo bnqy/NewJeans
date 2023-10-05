@@ -29,7 +29,9 @@ static bool NameLongerThanFour(string name)
 
 //var q = names.Where(new Func<string, bool>(NameLongerThanFour));
 
-var q = names.Where(NameLongerThanFour);
+//var q = names.Where(NameLongerThanFour);
+
+var q = names.Where(name => name.Length > 4);
 
 foreach (string n in q)
 {
