@@ -21,3 +21,15 @@ foreach (string n in query1)
 
 
 //var q = names.Where(new Func<string, bool>());
+
+static bool NameLongerThanFour(string name)
+{
+    return name.Length > 4;
+}
+
+var q = names.Where(new Func<string, bool>(NameLongerThanFour));
+
+foreach (string n in q)
+{
+    WriteLine(n);
+}
