@@ -10,14 +10,14 @@ var query1 = names.Where(name => name.EndsWith('m'));
 var query2 = from name in names where name.EndsWith('m') select name;
 
 
-string[] q1 =  query1.ToArray();
-List<string> q2 = query2.ToList();
+/*string[] q1 =  query1.ToArray();
+List<string> q2 = query2.ToList();*/
 
-foreach (string n in query1)
+/*foreach (string n in query1)
 {
     WriteLine(n);
     names[2] = "Dua";
-}
+}*/
 
 
 //var q = names.Where(new Func<string, bool>());
@@ -33,7 +33,18 @@ static bool NameLongerThanFour(string name)
 
 var q = names.Where(name => name.Length > 4);
 
-foreach (string n in q)
+/*foreach (string n in q)
+{
+    WriteLine(n);
+}*/
+
+
+
+var q1 = names
+         .Where(name => name.Length > 4)
+         .OrderBy(name => name.Length);
+
+foreach (string n in q1)
 {
     WriteLine(n);
 }
