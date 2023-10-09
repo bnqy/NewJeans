@@ -49,11 +49,39 @@ var q1 = names
     WriteLine(n);
 }*/
 
-var q2 = names.Where(name => name.Length > 4)
+IOrderedEnumerable<string> q2 = names.Where(name => name.Length > 4)
           .OrderBy(name => name.Length)
           .ThenBy(name => name);
 
-foreach (string n in q2)
+/*foreach (string n in q2)
 {
     WriteLine(n);
+}*/
+
+List<Exception> exceptions = new()
+{
+     new ArgumentException(),
+     new SystemException(),
+     new IndexOutOfRangeException(),
+     new InvalidOperationException(),
+     new NullReferenceException(),
+     new InvalidCastException(),
+     new OverflowException(),
+     new DivideByZeroException(),
+     new ApplicationException()
+};
+
+var aEQs= exceptions.OfType<ArithmeticException>();
+
+/*foreach (ArithmeticException aeq in aEQs)
+{
+    WriteLine(aeq);
+}
+*/
+
+object[] obj = {"Asad", 23, 1, "Hasan", 3.2, 's', 23.1f};
+var obj2 = obj.OfType < char>();
+foreach (var w in obj2)
+{
+    WriteLine(w);
 }
