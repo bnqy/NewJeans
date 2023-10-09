@@ -79,9 +79,9 @@ var aEQs= exceptions.OfType<ArithmeticException>();
 }
 */
 
-object[] obj = {"Asad", 23, 1, "Hasan", 3.2, 's', 23.1f};
+/*object[] obj = {"Asad", 23, 1, "Hasan", 3.2, 's', 23.1f};
 var obj2 = obj.OfType < char>();
 foreach (var w in obj2)
 {
     WriteLine(w);
-}
+}*/
