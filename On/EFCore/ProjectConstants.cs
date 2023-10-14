@@ -3,5 +3,5 @@ namespace EFCore;
 
 public class ProjectConstants
 {
-    public const string DatabaseProvider = "SQLServer";
+    public const string DatabaseProvider = "SQLite";
 }

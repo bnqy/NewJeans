@@ -3,7 +3,8 @@ using EFCore;
 using Microsoft.EntityFrameworkCore;
 
 WriteLine($"Using \"{ProjectConstants.DatabaseProvider}\" provider");
-QueryingCategories();
+
+//QueryingCategories();
 static void QueryingCategories()
 {
     using (Northwind db = new())
