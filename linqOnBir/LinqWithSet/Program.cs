@@ -22,6 +22,13 @@ var v3 = double.PositiveInfinity;
 var v4 = double.Epsilon;
 Console.WriteLine($"NegativeInfinity: {v}\nNaN: {v2}\nPositiveInfinity: {v3}\nEpsilon: {v4}");
 
+double[] doubles = { 5.0, 5.3, 5.5, 6.0, 6.3, 6.5, 7.0};
+for (int i = 0; i<doubles.Length; i++)
+{
+    // Console.WriteLine(Convert.ToInt32(doubles[i]));
+    WriteLine((int)doubles[i]);
+}
+
 static void Output(IEnumerable<string> cohort, string description = "")
 {
     if (!string.IsNullOrEmpty(description))
