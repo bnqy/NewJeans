@@ -10,13 +10,9 @@ public class Academy:DbContext
 
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
     {
-        //base.OnConfiguring(optionsBuilder);
         string path = Path.Combine(Environment.CurrentDirectory, "Academy.db");
         WriteLine($"Using {path} database file.");
-
-        //optionsBuilder.UseSqlite($"Filename={path}");
-        optionsBuilder.UseSqlServer(@"Data Source=.;Initial Catalog=Academy;Integrated Security=true;MultipleActiveResultSets=true;");
-
+        optionsBuilder.UseSqlite($"Filename={path}");
     }
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
@@ -65,9 +61,7 @@ public class Academy:DbContext
         new { CoursesCourseID = 1, StudentsStudentID = 1 },
         new { CoursesCourseID = 1, StudentsStudentID = 2 },
         new { CoursesCourseID = 1, StudentsStudentID = 3 },
-        
         new { CoursesCourseID = 2, StudentsStudentID = 2 },
-       
         new { CoursesCourseID = 3, StudentsStudentID = 3 }
         ));
     }
