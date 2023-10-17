@@ -5,7 +5,9 @@ VisualStudioVersion = 17.5.33424.131
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LINQ", "LINQ\LINQ.csproj", "{F1BCB19E-E165-47E2-B092-6488E605BD3B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LinqWithSet", "LinqWithSet\LinqWithSet.csproj", "{EB274301-5A1C-4E2E-9992-F1845C6EF9E5}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LinqWithSet", "LinqWithSet\LinqWithSet.csproj", "{EB274301-5A1C-4E2E-9992-F1845C6EF9E5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LinqEFCore", "LinqEFCore\LinqEFCore.csproj", "{CD0AAED2-4DE6-4CF6-9DB8-02F41E89F7DD}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +23,10 @@ Global
 		{EB274301-5A1C-4E2E-9992-F1845C6EF9E5}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{EB274301-5A1C-4E2E-9992-F1845C6EF9E5}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{EB274301-5A1C-4E2E-9992-F1845C6EF9E5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CD0AAED2-4DE6-4CF6-9DB8-02F41E89F7DD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CD0AAED2-4DE6-4CF6-9DB8-02F41E89F7DD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CD0AAED2-4DE6-4CF6-9DB8-02F41E89F7DD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CD0AAED2-4DE6-4CF6-9DB8-02F41E89F7DD}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
