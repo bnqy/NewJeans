@@ -1,21 +1,65 @@
 ﻿using static System.Console;
 using LinqEFCore;
 using Microsoft.EntityFrameworkCore;
-
+using System.Xml.Linq;
 
 //FilterAndSort();
 //JoinCategoriesAndProducts();
 //GroupJoinCategoriesAndProducts();
-AggreagteMethod();
+//AggreagteMethod();
+//CustomExtensionsMethod();
+OutputProductsAsXml();
 
+
+static void OutputProductsAsXml()
+{
+    using (Northwind db = new())
+    {
+        Product[] productsArray = db.Products.ToArray();
+
+        XElement xml = new("products", 
+            from p in productsArray
+            select new XElement("product",
+            new XAttribute("id", p.ProductId), 
+            new XAttribute("price", p.UnitPrice),
+            new XElement("name", p.ProductName)
+            )
+            );
+
+        WriteLine(xml.ToString());
+    }
+}
+
+
+
+static void CustomExtensionsMethod()
+{
+    using (Northwind db = new())
+    {
+        WriteLine("Mean units in stock: {0:N0}", db.Products.Average(p => p.UnitsInStock));
+
+        WriteLine("Mean unit price: {0:$#,##0.00}", db.Products.Average(p => p.UnitPrice));
+
+        WriteLine("Median units in stock: {0:N0}", db.Products.Median(p => p.UnitsInStock));
+
+        WriteLine("Median unit price: {0:$#,##0.00}", db.Products.Median(p => p.UnitPrice));
+        
+        WriteLine("Mode units in stock: {0:N0}", db.Products.Mode(p => p.UnitsInStock));
+        
+        WriteLine("Mode unit price: {0:$#,##0.00}", db.Products.Mode(p => p.UnitPrice));
+    }
+}
 static void FilterAndSort()
 {
     using (Northwind db = new())
     {
         DbSet<Product> allProducts = db.Products;
 
+
+        IQueryable<Product> processedProducts = allProducts.ProcessSequence();
+
         IQueryable<Product> filteredProducts =
-            allProducts.Where(product => product.UnitPrice < 10M);
+            processedProducts.Where(product => product.UnitPrice < 10M);
 
         IOrderedQueryable<Product> filteredAndSortedProducts =
             filteredProducts.OrderByDescending(product => product.UnitPrice);
