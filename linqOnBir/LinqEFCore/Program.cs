@@ -8,7 +8,27 @@ using System.Xml.Linq;
 //GroupJoinCategoriesAndProducts();
 //AggreagteMethod();
 //CustomExtensionsMethod();
-OutputProductsAsXml();
+//OutputProductsAsXml();
+ProcessSettings();
+
+
+
+static void ProcessSettings()
+{
+    XDocument doc = XDocument.Load("settings.xml");
+    var appSettings = doc.Descendants("appSettings")
+    .Descendants("add")
+    .Select(node => new
+    {
+        Key = node.Attribute("key")?.Value,
+        Value = node.Attribute("value")?.Value
+    }).ToArray();
+
+    foreach (var item in appSettings)
+    {
+        WriteLine($"{item.Key}: {item.Value}");
+    }
+}
 
 
 static void OutputProductsAsXml()
