@@ -1,12 +1,19 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using Microsoft.EntityFrameworkCore;
+using static System.Environment;
+using static System.IO.Path;
 
-namespace Exer02
+namespace Exer02;
+
+public class Northwind : DbContext
 {
-    internal class Northwind
+    public DbSet<Customer> Customers { get; set; }
+
+    protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
     {
+        string path = Combine(CurrentDirectory, "Northwind.db");
+
+        optionsBuilder.UseSqlite($"Filename={path}");
     }
+
+
 }
