@@ -9,8 +9,6 @@ public class StringBenchmarks
     public StringBenchmarks()
     {
         numbers = Enumerable.Range(start: 1, count: 20).ToArray();
-
-    
     }
 
     [Benchmark(Baseline = true)]
