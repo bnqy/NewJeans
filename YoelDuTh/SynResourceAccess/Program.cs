@@ -13,26 +13,56 @@ WriteLine($"{watch.ElapsedMilliseconds:N0} elapsed milliseconds.");
 
 static void MethodA()
 {
-    for (int i = 0; i < 5; i++)
+    try
     {
-        Thread.Sleep(SharedObjects.Random.Next(2000));
-        SharedObjects.Message += "A";
-        Write(".");
+        if (Monitor.TryEnter(SharedObjects.Conch, TimeSpan.FromSeconds(15)))
+        {
+            for (int i = 0; i < 5; i++)
+            {
+                Thread.Sleep(SharedObjects.Random.Next(2000));
+                SharedObjects.Message += "A";
+                Write(".");
+            }
+        }
+        else
+        {
+            WriteLine("Method A timed out when entering a monitor on conch.");
+        }
+    }
+    finally
+    {
+        Monitor.Exit(SharedObjects.Conch);
     }
 }
 
 static void MethodB()
 {
-    for (int i = 0; i < 5; i++)
+    try
     {
-        Thread.Sleep(SharedObjects.Random.Next(2000));
-        SharedObjects.Message += "B";
-        Write(".");
+        if (Monitor.TryEnter(SharedObjects.Conch, TimeSpan.FromSeconds(15)))
+        {
+            for (int i = 0; i < 5; i++)
+            {
+                Thread.Sleep(SharedObjects.Random.Next(2000));
+                SharedObjects.Message += "B";
+                Write(".");
+            }
+        }
+        else
+        {
+            WriteLine("Method B timed out when entering a monitor on conch.");
+        }
     }
+    finally
+    {
+        Monitor.Exit(SharedObjects.Conch);
+    }
+
 }
 
 static class SharedObjects
 {
     public static Random Random = new();
-    public static string? Message; 
+    public static string? Message;
+    public static object Conch = new();
 }
