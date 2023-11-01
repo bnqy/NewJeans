@@ -13,7 +13,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Tasks", "Tasks\Tasks.csproj
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NestedChildTasks", "NestedChildTasks\NestedChildTasks.csproj", "{75DA9F05-7966-41EF-950D-FB1CA5DCC6B5}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SynResourceAccess", "SynResourceAccess\SynResourceAccess.csproj", "{C3DD77A5-8098-4374-AD0A-99ECCF3BBDF1}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SynResourceAccess", "SynResourceAccess\SynResourceAccess.csproj", "{C3DD77A5-8098-4374-AD0A-99ECCF3BBDF1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AsyncConsole", "AsyncConsole\AsyncConsole.csproj", "{0C11961E-6643-4EA2-B574-CEF2239D2837}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -45,6 +47,10 @@ Global
 		{C3DD77A5-8098-4374-AD0A-99ECCF3BBDF1}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C3DD77A5-8098-4374-AD0A-99ECCF3BBDF1}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C3DD77A5-8098-4374-AD0A-99ECCF3BBDF1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0C11961E-6643-4EA2-B574-CEF2239D2837}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0C11961E-6643-4EA2-B574-CEF2239D2837}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0C11961E-6643-4EA2-B574-CEF2239D2837}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0C11961E-6643-4EA2-B574-CEF2239D2837}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
