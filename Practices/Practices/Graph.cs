@@ -18,12 +18,11 @@ public class Graph
 		}
 	}
 
-	public void AddEdges(string node1, string node2)
+	public void AddNodes(string node1, List<string> nodes)
 	{
-		if (graph.ContainsKey(node1) && graph.ContainsKey(node2))
+		if (graph.ContainsKey(node1))
 		{
-			graph[node1].Add(node2);
-			graph[node2].Add(node1);
+			graph[node1] = nodes;
 		}
 	}
 
@@ -33,6 +32,30 @@ public class Graph
 		{
 			WriteLine($"Node: {node.Key}");
 			WriteLine($" {string.Join(", ", node.Value)}");
+		}
+	}
+
+	public void BFS(string startNode)
+	{
+		Queue<string> queue = new Queue<string>();
+		HashSet<string> visited = new HashSet<string>();
+
+		queue.Enqueue(startNode);
+		visited.Add(startNode);
+
+		while (queue.Count > 0)
+		{
+			var node = queue.Dequeue();
+			WriteLine($"Current node: {node}");
+			
+			foreach (var n in graph[node])
+			{
+				if (!visited.Contains(n))
+				{
+					queue.Enqueue(n);
+					visited.Add(n);
+				}
+			}
 		}
 	}
 }
